@@ -200,3 +200,16 @@ Steps:
 Expected Result: Error message for invalid credentials. No Bearer token should be generated in the console.
 
 Actual Result:
+
+**Test Case 16 [Negative]: Account Lockout After Multiple Failed Login Attempts**
+
+Description: The system should temporarily lock the account or block further login attempts after a defined number of failed login attempts with invalid credentials.
+
+Steps:
+
+-Try to log in with an invalid password for the same user account (more than 5 times).
+-On the next 6th attempt, try logging in again (with either valid or invalid credentials).
+
+Expected Result: The system should return an error message such as "Account locked due to too many failed login attempts" or "Too many attempts, please try again later." No Bearer token should be generated. The user should not be able to log in until the lockout period expires or the account is unlocked.
+
+Actual Result:
